@@ -1,0 +1,161 @@
+h1 {
+	width: 750px;
+	margin: 0 auto;
+	text-align: center;
+	color: #00FF9B;
+	border-bottom: dotted;
+	margin-bottom: 25px;
+	font-family: 'Amatic SC', cursive;
+}
+
+p,nav {
+font-family: 'Crimson Text', serif;
+}
+
+body {
+	background-color: black;
+	color: white;
+}
+#hell {
+	width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.nav_link {
+	text-decoration: none;
+	color:#00FF9B;
+	padding-right: 10px;
+	padding-left: 10px;
+	/*
+	!!!!!
+	*/
+	border: dotted #00FF9B;
+	margin-right: 10px;
+}
+
+
+
+nav {
+	padding: 15px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 1.3em;
+	color: black;
+	text-decoration: none;
+	/*
+	!!!!!
+	*/
+	box-shadow: 0px 0px 18px 7px #00FF9B;
+	
+}
+
+
+/*
+Hardware CSS styles
+*/
+
+
+#h_div_intro {
+	width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	border-top: dotted #00FF9B;
+	padding-bottom: 5px;
+}
+
+#h_div_arduino_img {
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	border-top: dotted #00FF9B;
+	
+	
+}
+
+#h_lcd_img {
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+#h_lcd_text {
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	border-top: dotted #00FF9B;
+	padding-bottom: 5px;
+}
+#h_usb_img {
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+#h_usb_text {
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	border-top: dotted #00FF9B;
+	padding-bottom: 5px;
+}
+
+#h_pot_img {
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+#h_pot_text {
+	width: 375px;
+	margin: 0 auto;
+	text-align: center;
+	border-top: dotted #00FF9B;
+	padding-bottom: 5px;
+}
+
+.h_home_link {
+	text-decoration: none;
+	color:#00FF9B;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: dotted #00FF9B;
+	margin-right: 5px;
+}
+
+.h_next_link {
+	text-decoration: none;
+	color:#00FF9B;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: dotted #00FF9B;
+}
+ #resistor {
+ 	text-align: center;
+ }
+
+#t_lcd_img {
+	width: 500px;
+	float: left;
+	padding-left: 50px
+}
+
+#full_wired {
+	text-align: center;
+}
+
+#t_lcd_pinout {
+	width: 750px;
+}
+
+#t_data_text {
+	float: right;
+	margin: 0px auto;
+}
+
+table, th, td {
+	border: 1px solid #00FF9B;
+}

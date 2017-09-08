@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tutorial</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fira+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet"> 
+</head>
+
+<body>
+<header>
+	<h1> How it Works </h1>
+</header>
+	<nav>
+  <a href="index.php" class="nav_link"> Home </a> <a href="hardware.html" class="nav_link"> Part List </a> 
+  <a href="tutorial.html" class="nav_link">1</a> <a href="tutorial2.html" class="nav_link">2</a>
+</nav>
+
+	<div id="t_lcd_img">
+		<img src="img/lcd_back.jpg" width="350"  />	
+	</div>
+	
+	<div id="t_lcd_pinout">
+	<!-- 
+	FINISH: Table for the pinout of the LCD Screen, two columns and 16 rows
+	Pin number then the purpose
+	ALSO add a nav bar lol
+	-->
+	
+	<table class="LCD_datasheet">
+		<tr id="table-header">
+			<th><strong>#</strong></th>
+			<th><strong>Pin</strong></th>			
+		</tr>
+		
+		<tr  class="table_row">
+			<td>1</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>VCC 5v+</td>
+		</tr>
+		<tr class="table_row">
+			<td>3</td>
+			<td>Contrast Wiper</td>
+		</tr>
+		<tr class="table_row">
+			<td>4</td>
+			<td>RS</td>
+		</tr>
+		<tr class="table_row">
+			<td>5</td>
+			<td>Read/Write</td>
+		</tr>
+		<tr class="table_row">
+			<td>6</td>
+			<td>Enable</td>
+		</tr>
+		<tr class="table_row">
+			<td>7-10</td>
+			<td>Data pins 0-3</td>
+		</tr>
+		<tr class="table_row">
+			<td>11-14</td>
+			<td>Data Pins 4-7</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>Backlight VCC 5v+</td>
+		</tr>
+		<tr class="table_row">
+			<td>16</td>
+			<td>Backlight Ground</td>
+		</tr>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</table>
+	
+	
+	</div>
+	<p>
+	     	A few things to note about the Hitachi
+			HD44780 style LCD Screens.
+			
+			Pin 5 is the Read/Write pin and allows
+			us to read data from the screen if we
+			wanted to. The mode can be changed by 
+			pulling the pin high(read) or low(write)  
+			For this project we only want to write
+			to the screen so we will pull the pin 
+			directly to ground for simplicity and to
+			save an arduino pin.
+			
+			I've also split the 8 data pins into two 
+			parts. The first 4 are only used for 8-bit
+			addressing, this project will only be 
+			running in 4-bit mode so only data pins
+			4-7 will be used.
+	</p>
+	<!-- 
+	FIXME: Add a table and a basic explination of the Arduino UNO
+	-->
+	
+</body>
+</html>

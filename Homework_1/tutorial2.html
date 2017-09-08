@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	<meta charset="utf-8" />
+    <title>Tutorial</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet"> 
+	</head>
+  
+	<body>
+	<header>
+		<h1>Setup</h1>
+	</header>
+	<nav>
+  <a href="index.php" class="nav_link"> Home </a> <a href="hardware.html" class="nav_link"> Part List </a> 
+  <a href="tutorial.html" class="nav_link">1</a> <a href="tutorial2.html" class="nav_link">2</a>
+</nav>
+
+<section id="t2_mainText">
+		<p>
+			<strong>Step 1: LCD Setup</strong><br/>
+			The first thing that we want to do is get the LCD powered from the breadboard. 
+			First connect the 5v+ to positive rail of the breadboard and the GND pin to the negative rail.
+			Place the LCD on the board in a way you can access all the pins easily.
+			Connect pin 1 of the LCD to the 5v+ rail and pin 2 to the ground rail.<br/>
+			Connect pin 15 of the LCD to the 5v+ rail and pin 16 to the ground rail as well. <br/>
+			Connect pin 5 to the ground rail. This will put the LCD into write mode always. If you wanted to both write to the screen and read from the screen
+			you can always wire pin 5 to an Arduino pin and pull it high or low depending on the mode you want. <br/>
+			
+		</p>
+		<p>
+			<strong>Step 2: Potentiometer</strong><br/>
+			Take your 3 pin potentiometer and wire the first pin to the positive rail and the third pin to the negative rail.
+			The second pin is the signal pin and needs to be wired to pin 3 of the LCD. If your LCD is powered right you should be able to
+			turn the knob and see the brightness of the LCD increase or decrease.<br/>
+			
+		</p>
+		<p id="full_wired">
+			<strong>Step 3: Wiring to Arduino</strong><br/>
+			Its now time to wire the enable pin and the 4 data pins that will send the binary signal to the LCD for display. <br/>
+			<ul>
+				<li>D4 LCD pin to Arduino pin 5</li>
+				<li>D5 LCD pin to Arduino pin 4</li>
+				<li>D6 LCD pin to Arduino pin 3</li>
+				<li>D7 LCD pin to Arduino pin 2</li>
+			</ul>
+			<img src="img/full_wired.jpg"></img> <br/>
+			The final result should look like this.
+			
+			
+			
+		</p>
+	</section>
+</div>
+	
+	
+	
+	
+		<footer>
+	
+		</footer>
+
+
+	</body>
+	
+
+</html>
