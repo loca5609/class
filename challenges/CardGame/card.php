@@ -9,6 +9,12 @@
         
         function getSuit()
         {
+            $num = rand(0,3);
+            switch($num)
+            {
+                case 0: $suit = ""
+            }
+        }
         
     
     

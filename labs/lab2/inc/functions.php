@@ -1,7 +1,7 @@
  <?php
         
         
-        function displaySymbol($randomValue)
+        function displaySymbol($randomValue, $pos)
         {
             
             switch ($randomValue)
@@ -12,16 +12,18 @@
                     break;
              case 2: $symbol = "orange";
                     break;
+             case 3: $symbol = "bar";
+                    break;
             }
-            echo "<img src='img/$symbol.png' alt='$symbol' title=\"$symbol\" width=\"70\" />";
+            echo "<img id='reel$pos' src='img/$symbol.png' alt='$symbol' title=\"$symbol\" width=\"70\" />";
         }
         
         function play()
         {
-            for($i=0; $i<3; $i++)
+            for($i=1; $i<4; $i++)
             {
-                ${"randomValue" . $i } = rand(0,2);
-                displaySymbol(${"randomValue . $i"} );
+                ${"randomValue" . $i } = rand(0,3);
+                displaySymbol(${"randomValue" . $i}, $i );
             }
             displayPoints($randomValue1, $randomValue2, $randomValue3);
         }
@@ -39,6 +41,8 @@
                     case 1: $totalPoints = 500;
                     break;
                     case 2: $totalPoints = 250;
+                    break;
+                    case 3: $totalPoints = 900;
                     break;
                 }
                 echo "<h2> You won $totalPoints points!</h2>";
