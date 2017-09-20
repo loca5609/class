@@ -18,6 +18,11 @@
         ?>
         
         </div>
+        <div class="button">
+        <form>
+            <input type="submit" value="Roll Again" />
+        </form>
+        </div>
         
         
         

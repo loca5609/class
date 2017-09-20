@@ -36,13 +36,31 @@
             $dice = '6';
             break;
         }
+        echo "<div id='img$dice'>";
         echo "<img id='dice$dice' src='img/$dice.gif' alt='$dice' />";
+        echo "<p>$roll</p>";
+        echo "</div>";
     }
     
     function total($rollArray) 
     {
         $total = array_sum($rollArray);
-        echo "<p>The total is $total</p>";
+        //all sixes
+        if (array_sum($rollArray)==30) {
+            echo "<marquee scrollamount=20>WOAH NICE ONE</marquee>";
+        }
+        echo "<h2>The total is $total</h2>";
+    }
+    
+    //hey dont use this man debug only
+    function cheat() {
+        $rollArray = array_fill(0,5,6);
+        for($i=1; $i<6; $i++)
+            {
+                ${"roll" . $i} = $rollArray[$i-1];
+                display(${"roll" . $i});
+            }
+            total($rollArray);
     }
 
 ?>

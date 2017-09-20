@@ -18,13 +18,14 @@
 .color-secondary-2-3 { color: #0E5144 }
 .color-secondary-2-4 { color: #00362C }
 
-h1 {
+h1,h2 {
     text-align: center;
     font-family: 'Raleway', sans-serif;
 }
 
 p {
     font-family: 'IM Fell Great Primer', serif;
+    font-size: 150%;
 }
 
 body {
@@ -34,4 +35,21 @@ body {
 
 #main {
     text-align: center;
+}
+
+#dice1, #dice2, #dice3, #dice4, #dice5, #dice6 {
+    border-radius: 50px;
+}
+
+input {
+     font-family: 'IM Fell Great Primer', serif;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6 {
+    display: inline-block;
+}
+
+marquee {
+    font-family: 'IM Fell Great Primer', serif;
+    font-size: 500%; 
 }
