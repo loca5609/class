@@ -46,7 +46,7 @@
     {
         $total = array_sum($rollArray);
         //all sixes
-        if (array_sum($rollArray)==30) {
+        if (array_product($rollArray)==7776) {
             echo "<marquee scrollamount=20>WOAH NICE ONE</marquee>";
         }
         echo "<h2>The total is $total</h2>";

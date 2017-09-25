@@ -15,6 +15,7 @@
         <?php
         include 'php/functions.php';
         play();
+        
         ?>
         
         </div>
