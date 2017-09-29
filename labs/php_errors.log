@@ -1,2 +1,5 @@
 [29-Sep-2017 19:38:05 UTC] PHP Fatal error:  Call to undefined function curl_init() in /home/ubuntu/workspace/labs/lab4/api/pixabayAPI.php on line 5
 [29-Sep-2017 19:38:38 UTC] PHP Fatal error:  Call to undefined function curl_init() in /home/ubuntu/workspace/labs/lab4/api/pixabayAPI.php on line 5
+[29-Sep-2017 20:04:28 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/labs/lab4/index.php on line 32
+[29-Sep-2017 20:25:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/labs/lab4/index.php on line 70
+[29-Sep-2017 20:32:41 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/labs/lab4/index.php on line 54
