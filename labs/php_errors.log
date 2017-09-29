@@ -1,0 +1,2 @@
+[29-Sep-2017 19:38:05 UTC] PHP Fatal error:  Call to undefined function curl_init() in /home/ubuntu/workspace/labs/lab4/api/pixabayAPI.php on line 5
+[29-Sep-2017 19:38:38 UTC] PHP Fatal error:  Call to undefined function curl_init() in /home/ubuntu/workspace/labs/lab4/api/pixabayAPI.php on line 5

@@ -12,5 +12,6 @@
      <a href="labs/lab1/index.php">Lab 1 Personal Portfolio</a> <br/>
      <a href="labs/lab2/index.php">Lab 2 Slot Machine</a> <br/>
      <a href="labs/lab3/index.php">Lab 3 SilverJack Card Game</a> <br/>
+     <a href="labs/lab4/index.php">Lab 4 Pixabay API</a> <br/>
     </body>
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <?php
+//make pixabay account to get the api key
 $backgroundImage = "img/sea.jpg";
 if (isset($_GET['keyword'])) {
     include 'api/pixabayAPI.php';
     $imageURLs = getImageURLs($_GET['keyword']);
-   
+    $backgroundImage = $imageURLs[array_rand($imageURLs)];
 }
 ?>
 <html>
