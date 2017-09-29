@@ -27,6 +27,9 @@ if (isset($_GET['keyword'])) {
                 echo "<h2>Type a keyword to display a slideshow <br/> with random images from Pixibay.com </h2>";
             } else {
                 // display carousel
+                for ($i = 0; $i < 5; $i++) {
+                     echo "<img src='" .$imageURLs[$i]."' width='200'>";
+                }
             }
         ?>
         <form>
