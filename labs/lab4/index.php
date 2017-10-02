@@ -51,13 +51,14 @@ if (isset($_GET['keyword'])) {
                     {
                         do 
                         {
-                            $randomIndex = rand(0,count($imageURLs));
+                            $count = count($imageURLs);
+                            $randomIndex = rand(0,$count);
                         }
                      while (!isset($imageURLs[$randomIndex]));
                      echo '<div class="item ';
-                     echo ($i==0)?"active": ""; //what the fuck is this
+                     echo ($i==0)?"active": ""; 
                      echo '">';
-                     echo '<img src"'.$imageURLs[$randomIndex].'">';
+                     echo '<img src="'.$imageURLs[$randomIndex].'">';
                      echo '</div>';
                      unset($imageURLs[$randomIndex]);
                     }
