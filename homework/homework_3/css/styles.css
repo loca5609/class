@@ -1,0 +1,28 @@
+
+.color-primary-0 { color: #B0AD3F }	/* Main Primary color */
+.color-primary-1 { color: #FFFDBF }
+.color-primary-2 { color: #DBD879 }
+.color-primary-3 { color: #858215 }
+.color-primary-4 { color: #595600 }
+
+.color-secondary-1-0 { color: #539736 }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #B7DEA7 }
+.color-secondary-1-2 { color: #81BC68 }
+.color-secondary-1-3 { color: #2F7212 }
+.color-secondary-1-4 { color: #174C00 }
+
+.color-secondary-2-0 { color: #B08A3F }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #FFEABF }
+.color-secondary-2-2 { color: #DBBA79 }
+.color-secondary-2-3 { color: #855F15 }
+.color-secondary-2-4 { color: #593B00 }
+
+
+h1 {
+    color: #FFFDBF;
+}
+
+body {
+    text-align: center;
+    background-color: #B0AD3F;
+}

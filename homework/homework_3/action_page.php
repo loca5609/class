@@ -1,10 +1,27 @@
+<?php
+echo "<strong>$_GET[bold]</strong>! Its bold!<br>";
+echo "<i>$_GET[italic]</i>! Its Italic!<br>";
+
+
+if($_GET[color]==random){
+    $r = rand(0,255);
+    $g = rand(0,255);
+    $b = rand(0,255);
+    
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Homework 3</title>
         <meta charset="utf-8" />
     </head>
-    <body>
+    <body style="background-color: rgb(<?php echo $r?>,<?php echo $g?>,<?php echo $b?>">
         <style type="text/css">
             @import url("css/styles.css");
         </style>
@@ -17,7 +34,7 @@
                 Text to make <i>italic</i>:<br>
                 <input type="text" name="italic"/><br><br>
                 Random Background Color?<br>
-                <input type="radio" name="random" value="random"/>Random<br>
+                <input type="radio" name="color" value="random"/>Random<br>
                 <br>
                 Favorite Animal<br>
                 <select name="animal">
