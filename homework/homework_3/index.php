@@ -7,7 +7,8 @@
     <body>
         <style type="text/css">
             @import url("css/styles.css");
-        </style>
+            @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Rye');
+        </style> 
         <header><h1>HTML Forms!</h1></header>
         
         <div id="text_mod">

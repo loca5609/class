@@ -20,9 +20,16 @@
 
 h1 {
     color: #FFFDBF;
+   font-family: 'Rye', cursive;
 }
 
 body {
     text-align: center;
     background-color: #B0AD3F;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#php {
+    text-align: center;
+    font-size: large;
 }

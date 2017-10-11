@@ -1,7 +1,8 @@
 <?php
+echo '<div id="php">';
 echo "<strong>$_GET[bold]</strong>! Its bold!<br>";
 echo "<i>$_GET[italic]</i>! Its Italic!<br>";
-
+echo "</div>";
 
 if($_GET[color]==random){
     $r = rand(0,255);
@@ -24,17 +25,18 @@ if($_GET[color]==random){
     <body style="background-color: rgb(<?php echo $r?>,<?php echo $g?>,<?php echo $b?>">
         <style type="text/css">
             @import url("css/styles.css");
+            @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Rye');
         </style>
         <header><h1>HTML Forms!</h1></header>
         
         <div id="text_mod">
             <form action="action_page.php" method="get">
                 Text to make <strong>Bold</strong>: <br>
-                <input type="text" name="bold"/><br>
+                <input type="text" name="bold" value="<?php echo $_GET[bold];?>"/><br>
                 Text to make <i>italic</i>:<br>
-                <input type="text" name="italic"/><br><br>
+                <input type="text" name="italic" value="<?php echo $_GET[italic]; ?>"/> <br><br>
                 Random Background Color?<br>
-                <input type="radio" name="color" value="random"/>Random<br>
+                <input type="radio" name="color" value="random" checked/>Random<br>
                 <br>
                 Favorite Animal<br>
                 <select name="animal">
