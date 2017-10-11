@@ -11,6 +11,37 @@ if($_GET[color]==random){
     
 }
 
+echo '<div id="animal">';
+if($_GET[animal]=="1"){
+    echo "Your favorite animal is the CAT!<br>";
+    $animal = "cat";
+}
+if($_GET[animal]=="2"){
+    echo "Your favorite animal is the DOG!<br>";
+    $animal = "dog";
+}
+if($_GET[animal]=="3"){
+    echo "Your favorite animal is the LIZARD!<br>";
+    $animal = "lizard";
+}
+if($_GET[animal]=="4"){
+    echo "Your favorite animal is the COW!<br>";
+    $animal = "cow";
+}
+if($_GET[animal]=="5"){
+    echo "Your favorite animal is the LLAMA!<br>";
+    $animal = "llama";
+}
+if($_GET[animal]=="6"){
+    echo "Your favorite animal is the ALPACA!<br>";
+    $animal = "alpaca";
+}
+if($_GET[animal]=="7"){
+    echo "Your favorite animal is the MOLE-RAT!<br>";
+    $animal = "molerat";
+}
+echo "</div>";
+
 
 ?>
 
@@ -28,7 +59,7 @@ if($_GET[color]==random){
             @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Rye');
         </style>
         <header><h1>HTML Forms!</h1></header>
-        
+        <img src="img/<?php echo $animal;?>.jpg" alt="animal"></img>
         <div id="text_mod">
             <form action="action_page.php" method="get">
                 Text to make <strong>Bold</strong>: <br>
