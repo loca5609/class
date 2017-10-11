@@ -31,6 +31,18 @@ catch(PDOException $e)
     
     <body>
         <h1> Users and their departments (SQL Joins practice)</h1>
+       
+        <?php
+        $sql = "select firstName, lastName, deviceName, checkoutDate from tc_user natural join tc_checkout natural join tc_device where deviceType = \"Tablet\" limit 10";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $records =$stmt->fetchAll(PDO::FETCH_ASSOC);
+        echo "<h2>Users whoms't have checked out a tablet</h2>";
+        foreach ($records as $record) {
+           echo "Name: $record[firstName] $record[lastName], Device: $record[deviceName], Checkout Date: $record[checkoutDate]<br>";
+        }
+        
+        ?>
         
         
     </body>
