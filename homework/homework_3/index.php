@@ -29,7 +29,6 @@
                     <option value="5">Llama</option>
                     <option value="6">Alpaca</option>
                     <option value="7">Mole Rat</option>
-                    
                 </select>
                 <input type="submit" value="submit"/>
             </form>
