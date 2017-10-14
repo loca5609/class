@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    background-image: url("skelly.gif");
+    background-repeat: repeat;
+}
+
+#results {
+    text-align: center;
+}
