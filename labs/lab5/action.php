@@ -53,19 +53,30 @@ catch(PDOException $e)
             <input type="checkbox" name="available" value="available"/>
             <input type="submit" name="search" value="Search"/>
             <?php
-            //Takes care of device type
+            //Takes care of device types 
+            //FIXME both if statements can be true and print info twice dumbass
             echo '<div id="results">';
-            if(isset($_GET[type])){
-                $sql = "select deviceName from tc_device where deviceName like '%$_GET[i_name]%' AND deviceType = '$_GET[type]'";
                 if($_GET[available]=="available"){
-                       $sql = "select deviceName from tc_device where deviceName like '%$_GET[i_name]%' AND deviceType = '$_GET[type]' AND status like '%A%'";
+                    $sql = "select deviceName from tc_device where deviceName like '%$_GET[i_name]%' AND deviceType = '$_GET[type]' AND status like '%A%'";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->execute();
+                    $records = $stmt->fetchAll();
+                    foreach ($records as $record) {
+                        echo "Device: $record[deviceName] This item is available <br>";
+                    }
+                }
+                else{
+                $sql = "select deviceName, deviceType from tc_device where deviceName like '%$_GET[i_name]%' AND deviceType = '$_GET[type]'";
+                $stmt = $conn->prepare($sql);
+                $stmt->execute();
+                $records = $stmt->fetchAll();
+                foreach ($records as $record) {
+                    echo "Device: $record[deviceName] Type: $record[deviceType]<br>";
                 }
             }
             
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-            $records = $stmt->fetchAll();
-            print_r($records);
+            //array debug
+            //print_r($records);
             echo "</div>";
             ?>
             
