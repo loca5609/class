@@ -36,6 +36,7 @@ catch(PDOException $e)
         <h1>Tech Checkout</h1>
         <style>
            @import url('css/styles.css');
+         
        </style>
         <form action="action.php" method ="get">
             Device :

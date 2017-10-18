@@ -82,3 +82,30 @@ Stack trace:
 #0 /home/ubuntu/workspace/labs/lab5/action.php(62): PDOStatement->execute()
 #1 {main}
   thrown in /home/ubuntu/workspace/labs/lab5/action.php on line 62
+[18-Oct-2017 20:19:12 UTC] PHP Fatal error:  Call to undefined function displayUsers() in /home/ubuntu/workspace/labs/lab6/admin.php on line 15
+[18-Oct-2017 20:19:12 UTC] PHP Stack trace:
+[18-Oct-2017 20:19:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab6/admin.php:0
+[18-Oct-2017 20:25:52 UTC] PHP Fatal error:  Call to undefined function displayUsers() in /home/ubuntu/workspace/labs/lab6/admin.php on line 15
+[18-Oct-2017 20:25:52 UTC] PHP Stack trace:
+[18-Oct-2017 20:25:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab6/admin.php:0
+[18-Oct-2017 20:26:41 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/labs/lab6/login.php on line 41
+[18-Oct-2017 20:26:41 UTC] PHP Stack trace:
+[18-Oct-2017 20:26:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab6/admin.php:0
+[18-Oct-2017 20:26:41 UTC] PHP   2. displayUsers() /home/ubuntu/workspace/labs/lab6/admin.php:15
+[18-Oct-2017 20:27:47 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/labs/lab6/admin.php on line 5
+[18-Oct-2017 20:27:47 UTC] PHP Stack trace:
+[18-Oct-2017 20:27:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab6/admin.php:0
+[18-Oct-2017 20:27:47 UTC] PHP   2. displayUsers() /home/ubuntu/workspace/labs/lab6/admin.php:22
+[18-Oct-2017 20:27:49 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/labs/lab6/admin.php on line 5
+[18-Oct-2017 20:27:49 UTC] PHP Stack trace:
+[18-Oct-2017 20:27:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab6/admin.php:0
+[18-Oct-2017 20:27:49 UTC] PHP   2. displayUsers() /home/ubuntu/workspace/labs/lab6/admin.php:22
+[18-Oct-2017 20:28:00 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/labs/lab6/admin.php on line 5
+[18-Oct-2017 20:28:00 UTC] PHP Stack trace:
+[18-Oct-2017 20:28:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab6/admin.php:0
+[18-Oct-2017 20:28:00 UTC] PHP   2. displayUsers() /home/ubuntu/workspace/labs/lab6/admin.php:22
+[18-Oct-2017 20:34:52 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'da39a3ee5e6b4b0d3255bfef95601890afd80709'' at line 1' in /home/ubuntu/workspace/labs/lab6/login.php:27
+Stack trace:
+#0 /home/ubuntu/workspace/labs/lab6/login.php(27): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/labs/lab6/login.php on line 27
