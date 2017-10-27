@@ -12,6 +12,7 @@
         <title>Lab 6: Admin Login Page</title>
     </head>
     <body>
+        <h1>Admin Login Page</h1>
         <form method="post" action="login.php">
             Username: <input type="text" name="username"/>
             Password: <input type="password" name="password"/>

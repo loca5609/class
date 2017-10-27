@@ -20,9 +20,20 @@ function displayUsers() {
         <title> Admin Page </title>
     </head>
     <body>
-        <h1>TCP ADMIN PAGE</h1>
+        <h1>Admin Page</h1>
+        <form action ="addUser.php">
+            <input type="Submit" name="addUser" value="Add User"/>
+        </form>
+        <form action ="updateUser.php">
+            <input type="Submit" name="updateUser" value="Update User"/>
+        </form>
+        
+        
+        
+        <!--This isn't displaying the username zzz -->
         Welcome <?=$_SESSION['username'] ?>
         <br>
         <?=displayUsers()?>
-    </body>
+        
+      
 </html>

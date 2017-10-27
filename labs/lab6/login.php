@@ -15,8 +15,11 @@ if(empty($records)){
     echo "Wrong user or password";
 } else {
     //redirect to admin page
-    $_SESSION['username'] = $records['username'];
-    $_SESSION['password'] = $records['password'];
+    foreach($records as $record){
+        $_SESSION['username'] = $record[username];
+        $_SESSION['password'] = $record[password];
+    }
+   
     header("Location: admin.php");
 }
 
