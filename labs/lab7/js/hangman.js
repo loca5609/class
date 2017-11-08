@@ -1,0 +1,81 @@
+var selectedWord = "";
+var selectedHint = "";
+var board = "";
+var remainingGuesses = 6;
+var words = ["snake","monkey","beetle"];
+
+console.log(words[0]);
+
+//selects a random word from the word array
+function pickWord(){
+    var randomInt = Math.floor(Math.random() * words.length);
+    selectedWord = words[randomInt];
+}
+
+//initialize the board
+function initBoard() {
+    for (var letter in selectedWord){
+        board += '_';
+    }
+}
+function updateBoard() {
+    $("#word").empty();
+  for (var letter of board)
+      {
+        document.getElementById("word").innerHTML += letter + " ";
+      }  
+}
+var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+function createLetters() {
+    for(var letter of alphabet){
+        $("#letters").append("<button class='letter' id='" + letter + "'>" + letter + "</button>");
+    }
+}
+
+$(".letter").click(function(){
+    console.log("clicked");
+});
+
+//Checks to see if the selected letter exists in selectedWord
+function checkLetter(letter){
+    var positions = new Array();
+    
+    for(var i =0; i < selectedWord.length; i++){
+        console.log(selectedWord)
+        if(letter == selectedWord[i]){
+            positions.push(i);
+        }
+    }
+    
+    if (positions.length > 0){
+        updateWord(positions, letter);
+    } else {
+        remainingGuesses -= 1;
+    }
+}
+
+//Update the current word then call for a board update
+function updateWord(positions, letter){
+    for(var pos of positions){
+        board = replaceAt(board,pos,letter);
+    }
+    updateBoard();
+}
+
+//Helper function for replacing specific indexes in a string
+function replaceAt(str,index,value){
+    return str.substr(0,index) + value + str.substr(index + value.length);
+}
+
+
+window.onload = startGame();
+
+function startGame() {
+    createLetters();
+    pickWord();
+    initBoard();
+    updateBoard();
+    
+}
+
