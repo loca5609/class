@@ -25,6 +25,10 @@ function updateBoard() {
         document.getElementById("word").innerHTML += letter + " ";
       }  
 }
+
+function updateMan() {
+    $("#hangImg").attr("src","img/stick_"+(6-remainingGuesses)+ ".png");
+}
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 function createLetters() {
@@ -50,6 +54,13 @@ function checkLetter(letter){
     
     if (positions.length > 0){
         updateWord(positions, letter);
+        //Winning Guess
+        if(!board.includes('_')){
+            endGame(true);
+        } else {
+            remainingGuesses -= 1;
+            updateMan();
+        }
     } else {
         remainingGuesses -= 1;
     }
@@ -68,6 +79,20 @@ function replaceAt(str,index,value){
     return str.substr(0,index) + value + str.substr(index + value.length);
 }
 
+$("#letterBtn").click(function(){
+    var boxVal = $("#letterBox").val();
+    console.log("You pressed the button and its value was " + boxVal);
+})
+
+function endGame(win){
+    $("#letters").hide();
+    
+    if(win) {
+        $("#win").show();
+    } else {
+        $("#lost").show();
+    }
+}
 
 window.onload = startGame();
 
