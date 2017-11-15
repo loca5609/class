@@ -12,11 +12,7 @@
             <h1>Dice Roller</h1>
         </header>
         <div id="main">
-        <?php
-        include 'php/functions.php';
-        play();
         
-        ?>
         
         </div>
         <div class="button">
@@ -24,7 +20,9 @@
             <input type="submit" value="Roll Again" />
         </form>
         </div>
-        
+        <script type="text/javascript" src="functions.js">
+            play();
+        </script>
         
         
     </body>

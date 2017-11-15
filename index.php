@@ -9,6 +9,7 @@
      <a href="homework/homework_1/index.php">Homework 1: Arduino Tutorial</a> <br/>
      <a href="homework/homework_2/index.php">Homework 2: Dice Roller</a> <br/>
      <a href="homework/homework_3/index.php">Homework 3: HTML Forms</a> <br/>
+     <a href="homework/homework_3/index.php">Homework 4: JavaScript Dice Roller</a> <br/>
      <h2>Labs</h2>
      <a href="labs/lab1/index.php">Lab 1 Personal Portfolio</a> <br/>
      <a href="labs/lab2/index.php">Lab 2 Slot Machine</a> <br/>
