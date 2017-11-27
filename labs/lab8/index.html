@@ -10,12 +10,12 @@
 
     function getCity() {
         
-        alert($("#zip").val());
+        //alert($("#zip").val());
         $.ajax({
 
             type: "GET",
             url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
-            dataType: "json",
+            dataType: "html",
             data: { "zip": $("#zip").val()},
             success: function(data,status) {
               
