@@ -6,7 +6,9 @@
        
     <script>
     var dateInput = $("#date").val();
-    $.ajax({
+    
+        function apiCall(){
+            $.ajax({
 
             type: "GET",
             url: "https://api.fixer.io/latest?base",
@@ -28,8 +30,6 @@
             }
 
         });//ajax
-        function apiCall(){
-            
         
     }  //function
         
