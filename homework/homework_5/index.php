@@ -5,12 +5,13 @@
        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
        
     <script>
+    var dateInput = $("#date").val();
     $.ajax({
 
             type: "GET",
-            url: "https://api.fixer.io/latest",
+            url: "https://api.fixer.io/latest?base",
             dataType: "json",
-            data: {"date": $("#date").val()},
+            data: {"base": $("#base").val()},
             success: function(data,status) {
               //rates is the assoc. array of currency types, the key is the currency code, value is the exchange from the base currency
               //alert(data.rates["AUD"]);
@@ -39,11 +40,10 @@
     <body>
         <h1>API Calls</h1>
         <p><h3>Date entry instructions</h3>
-        This site allows you to view the currency exchange rates from past dates
-        Please enter all dates in the format "YYYY-MM-DD"
+        This site allows you to view the currency exchange rates of a certain currency compared to 5 other currencies 
         </p>
         <form>
-            <input type="text" id="date"/>
+            <input type="text" id="base"/>
             Date
             <button onClick="apiCall()">GO</button>
         </form>
