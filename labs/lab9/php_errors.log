@@ -1,0 +1,14 @@
+[29-Nov-2017 21:12:40 UTC] PHP Warning:  include(../../../inc/dbConn.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php on line 3
+[29-Nov-2017 21:12:40 UTC] PHP Stack trace:
+[29-Nov-2017 21:12:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php:0
+[29-Nov-2017 21:12:40 UTC] PHP Warning:  include(): Failed opening '../../../inc/dbConn.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php on line 3
+[29-Nov-2017 21:12:40 UTC] PHP Stack trace:
+[29-Nov-2017 21:12:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php:0
+[29-Nov-2017 21:12:40 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php on line 8
+[29-Nov-2017 21:12:40 UTC] PHP Stack trace:
+[29-Nov-2017 21:12:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php:0
+[29-Nov-2017 21:13:03 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'heroku_eb82b204b84db80.adoptees' doesn't exist' in /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php:9
+Stack trace:
+#0 /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php(9): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/labs/lab9/api/getPetInfo.php on line 9

@@ -20,6 +20,7 @@
      <a href="labs/lab6/index.php">Lab 6 Authentication / CRUD</a> <br/>
      <a href="labs/lab7/index.php">Lab 7 Hangman (unfinished)</a> <br/>
      <a href="labs/lab8/index.html">Lab 8 AJAX/Earthquake API</a> <br/>
+     <a href="labs/lab9/index.php">Lab 9 CSUMB Pet Adpotion</a> <br/>
      <h2>Projects</h2>
      <a href="groupProject2/index.php">Group Project 2: Shopping Bonanza</a> <br/>
     </body>
