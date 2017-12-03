@@ -128,3 +128,12 @@ Stack trace:
 [08-Nov-2017 18:55:05 UTC] PHP Stack trace:
 [08-Nov-2017 18:55:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/groupProject2/index.php:0
 [08-Nov-2017 18:55:05 UTC] PHP   2. getItemTypes() /home/ubuntu/workspace/groupProject2/index.php:140
+[03-Dec-2017 01:39:43 UTC] PHP Fatal error:  Call to undefined function url() in /home/ubuntu/workspace/final/index.php on line 2
+[03-Dec-2017 01:39:43 UTC] PHP Stack trace:
+[03-Dec-2017 01:39:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/index.php:0
+[03-Dec-2017 02:31:27 UTC] PHP Warning:  include(../../dbConn.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/final/user.php on line 3
+[03-Dec-2017 02:31:27 UTC] PHP Stack trace:
+[03-Dec-2017 02:31:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/user.php:0
+[03-Dec-2017 02:31:27 UTC] PHP Warning:  include(): Failed opening '../../dbConn.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/final/user.php on line 3
+[03-Dec-2017 02:31:27 UTC] PHP Stack trace:
+[03-Dec-2017 02:31:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/user.php:0
