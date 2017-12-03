@@ -40,5 +40,6 @@
      <a href="labs/lab10/index.php">Lab 10 Bird Image Gallery</a> <br/>
      <h2>Projects</h2><hr class="my-4">
      <a href="groupProject2/index.php">Group Project 2: Shopping Bonanza</a> <br/>
+     <a href="final/index.php" >Final Project: Retro Game Catalog</a><br/>
     </body>
 </html>
