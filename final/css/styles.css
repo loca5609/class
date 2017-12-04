@@ -1,0 +1,34 @@
+.container {
+
+    text-align:center;
+}
+
+.jumbotron{
+    text-align: center;
+    font-family: retro, sans-serif;
+   
+    
+}
+
+@font-face{
+    font-family: 'retro';
+    src: url('retro.ttf')
+    format('truetype');
+    
+   
+}
+
+@font-face{
+    
+    font-family: 'pixel';
+    src: url('pixelBubble.otf')
+    format('opentype');
+}
+
+.btn {
+    font-family: pixel, sans-serif;
+}
+
+#loginForm {
+    text-align: center;
+}
