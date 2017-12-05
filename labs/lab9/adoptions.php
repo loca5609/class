@@ -3,7 +3,7 @@
     
      function getPetList() {
             include '../../dbConn.php';
-            
+           
             $sql = "SELECT *
                     FROM adoptees"; 
                     
@@ -39,7 +39,7 @@
                                       " <img src='img/" + data.pictureURL + "'><br >" + 
                                        data.description);   
                  
-                 $("#petNameModalLabel").html(data.name);
+                   $("#petNameModalLabel").html(data.name);                   
                    
                 
                 },
@@ -49,6 +49,7 @@
                 
             });//ajax
             
+             
             
             
         }); //.getLink click

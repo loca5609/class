@@ -244,3 +244,15 @@ Stack trace:
 [01-Dec-2017 21:06:41 UTC] PHP Stack trace:
 [01-Dec-2017 21:06:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab10/index.php:0
 [01-Dec-2017 21:06:41 UTC] PHP   2. move_uploaded_file() /home/ubuntu/workspace/labs/lab10/index.php:5
+[05-Dec-2017 02:24:54 UTC] PHP Warning:  include(../../dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/labs/lab9/adoptions.php on line 5
+[05-Dec-2017 02:24:54 UTC] PHP Stack trace:
+[05-Dec-2017 02:24:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab9/adoptions.php:0
+[05-Dec-2017 02:24:54 UTC] PHP   2. getPetList() /home/ubuntu/workspace/labs/lab9/adoptions.php:66
+[05-Dec-2017 02:24:54 UTC] PHP Warning:  include(): Failed opening '../../dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/labs/lab9/adoptions.php on line 5
+[05-Dec-2017 02:24:54 UTC] PHP Stack trace:
+[05-Dec-2017 02:24:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab9/adoptions.php:0
+[05-Dec-2017 02:24:54 UTC] PHP   2. getPetList() /home/ubuntu/workspace/labs/lab9/adoptions.php:66
+[05-Dec-2017 02:24:54 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/labs/lab9/adoptions.php on line 6
+[05-Dec-2017 02:24:54 UTC] PHP Stack trace:
+[05-Dec-2017 02:24:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/labs/lab9/adoptions.php:0
+[05-Dec-2017 02:24:54 UTC] PHP   2. getPetList() /home/ubuntu/workspace/labs/lab9/adoptions.php:66
