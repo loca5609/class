@@ -5,7 +5,10 @@ include '../dbConn.php';
 //Game Modal insert record
 if(isset($_GET['gameSubmit'])){
   
-  $sql = "INSERT INTO game (name,publisher,release_date,system) VALUES (:name,:publisher,:release,:system)";
+  $game = $_GET['gameName'];
+  
+  if(checkEntry($game)==true){
+    $sql = "INSERT INTO game (name,publisher,release_date,system) VALUES (:name,:publisher,:release,:system)";
   $namedParameters[':name'] = $_GET['gameName'];
   $namedParameters[':publisher'] = $_GET['gamePub'];
   $namedParameters[':release'] = $_GET['gameRelease'];
@@ -14,7 +17,25 @@ if(isset($_GET['gameSubmit'])){
             $stmt = $conn->prepare($sql);
             
             $stmt->execute($namedParameters);
+  } 
+  
 }
+
+function checkEntry($game){
+  global $conn;
+  $sql = "SELECT name FROM game where name like :name AND system like :system";
+  $namedParameters[':name'] = $_GET['gameName'];
+  $namedParameters[':system'] = $_GET['gameSystem'];
+  $stmt = $conn->prepare($sql);
+  $stmt->execute($namedParameters);
+  $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  if($records.length > 0){
+    return false;
+  } else {
+    return true;
+  }
+}
+
 
 function nesReport(){
   //generate games report
@@ -50,7 +71,43 @@ function saturnReport(){
     echo "Saturn Games: ". $record[satCount] ."<br> ";
   }
 }
-  
+
+function systemReport(){
+   global $conn;
+  $sql = "SELECT count(name) as total from game_system";
+  $stmt = $conn->prepare($sql);
+  $stmt->execute();
+  $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  foreach($records as $record){
+    echo "Number of Game Systems: ". $record[total] ."<br> ";
+  }
+  generation4();
+  generation5();
+}
+
+function generation5(){
+  global $conn;
+  $sql = "SELECT count(name) as gen from game_system where generation = 5";
+  $stmt = $conn->prepare($sql);
+  $stmt->execute();
+  $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  foreach($records as $record){
+    echo "5th Generation Consoles: ". $record[gen] ."<br> ";
+  }
+   
+}
+
+function generation4(){
+  global $conn;
+  $sql = "SELECT count(name) as gen from game_system where generation = 4";
+  $stmt = $conn->prepare($sql);
+  $stmt->execute();
+  $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  foreach($records as $record){
+    echo "4th Generation Consoles: ". $record[gen] ."<br> ";
+  }
+   
+}
  
 
             
@@ -59,6 +116,7 @@ function saturnReport(){
 
 <script>
     $(document).ready(function() {
+      
         
         $("#addGame").click(function(){
             $('#addGameModel').modal("show");
@@ -69,13 +127,18 @@ function saturnReport(){
           $("#reportModal").modal("show");
         });//click
         
-       
+        
+        
       
         
        
         
         
     });//doc ready
+    
+   function apiCall(){
+         
+    }
     
 </script>
 
@@ -86,10 +149,15 @@ function saturnReport(){
     </head>
     
     <body>
+      <style>
+        body{
+          text-align:center;
+        }
+      </style>
         <!-- Button trigger modal -->
         <button type="button" id="addGame" class="btn btn-primary">
           Add Game
-        </button> <br>
+        </button> <br><br>
         <button type="button" id="report" class="btn btn-primary">
           View Reports
         </button>
@@ -144,17 +212,21 @@ function saturnReport(){
                 <h4>Reports</h4>
                 
                 <div id="game_report">
+                  <h3><strong>Games</strong></h3>
                   <?=nesReport()?>
                   <?=genReport()?>
                   <?=saturnReport()?>
                 </div>
                 
                 <div id="system_report">
-                  
+                  <h3><strong>Systems</strong></h3>
+                  <?=systemReport()?>
                 </div>
                 
                 <div id="accessory_report">
-                  
+                  <script>
+                     
+                  </script>
                 </div>
                 
               </div>
