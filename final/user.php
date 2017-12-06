@@ -13,35 +13,90 @@ function getGameSystems(){
             echo "<option value=".$record['name'].">". $record['name']."</option>";
     }
 }
-
+function displayAcc(){
+    global $conn;
+    $sql = "select name, type, system, quantity from accessories WHERE system LIKE :systemName";
+    $namedParameters[':systemName'] = "%" . $_GET['systemFilter'] . "%";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($namedParameters);
+    $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo "<div id='results' >";
+    echo "<table class='table table-dark'>";
+    //headers
+    echo "<tr>";
+    echo "<th scope='col'> Name </th>";
+    echo "<th scope='col'> Type </th>";
+    echo "<th scope='col'> System  </th>";
+    echo "<th scope='col'> Quantity </th>";
+    echo "</tr>";
+    
+    foreach($records as $r){
+        echo "<tr>";
+        echo "<td>". $r['name'] ."</td>";
+        echo "<td>". $r['type'] ."</td>";
+        echo "<td>". $r['system'] ."</td>";
+        echo "<td>". $r['quantity'] ."</td>";
+        echo "</tr>";
+        
+        
+    }
+    echo "</table>";
+    echo "</div>";
+    
+}
 function display(){
     global $conn;
-    $sql = "select g.name, publisher,release_date,system from game g join game_system gs where g.system = gs.name ";
-    //FIXME: need to finish the sorting code
-    //Need to figure out the select menu cause its acting fucked
+    $sql = "select name, publisher, release_date, system from game";
+    
     if(isset($_GET['go'])){
         //append sql statement
-        if(!empty($_GET['game'])){
-            echo "get game";
-            $sql .= " AND g.name LIKE '%:gameName%' ";
-            $namedParameters[':gameName'] = $_GET['game'];
+        if(isset($_GET['accessory'])){
+            displayAcc();
+            return;
+        }
+        if(isset($_GET['game'])){
+           
+            $sql .= " WHERE name LIKE :gameName";
+            $namedParameters[':gameName'] = "%" . $_GET['game'] . "%";
         }
         
-        if(!empty($_GET['systemFilter']))
+        if(isset($_GET['systemFilter']))
         {
-            echo "get filter";
-        $sql .= " AND gs.name LIKE '%::systemName%'";
+            
+        $sql .= " AND system LIKE :systemName";
         
-        $namedParameters[':systemName'] = $_GET['systemFilter'];
-        echo $namedParameters[':systemName'];
+        $namedParameters[':systemName'] = "%" . $_GET['systemFilter'] . "%";
+        
         }
+        
+        
     }
     
     $stmt = $conn->prepare($sql);
-	$stmt->execute($namedParameters);
-	
-	$records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	print_r($records);
+    $stmt->execute($namedParameters);
+    $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo "<div id='results' >";
+    echo "<table class='table table-dark'>";
+    //headers
+    echo "<tr>";
+    echo "<th scope='col'> Game </th>";
+    echo "<th scope='col'> Publisher </th>";
+    echo "<th scope='col'> Release Date </th>";
+    echo "<th scope='col'> System </th>";
+    echo "</tr>";
+    
+    foreach($records as $r){
+        echo "<tr>";
+        echo "<td>". $r['name'] ."</td>";
+        echo "<td>". $r['publisher'] ."</td>";
+        echo "<td>". $r['release_date'] ."</td>";
+        echo "<td>". $r['system'] ."</td>";
+        echo "</tr>";
+        
+        
+    }
+    echo "</table>";
+    echo "</div>";
     
 }
 
@@ -64,6 +119,8 @@ function display(){
                 <option value="">Select One</option>
                 <?=getGameSystems()?>
             </select>
+            Search Accessories:
+            <input type="checkbox" name="accessory" value="yes"/>
             <input type="submit" name="go" value="GO"/>
         </form>
         

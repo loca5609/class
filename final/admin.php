@@ -127,6 +127,14 @@ function generation4(){
           $("#reportModal").modal("show");
         });//click
         
+        $("#update").click(function(){
+          $("#updateSystemModal").modal("show");
+        });//click
+        
+        $("#delete").click(function(){
+          $("#deleteGameModal").modal("show");
+        });//click
+        
         
         
       
@@ -154,12 +162,18 @@ function generation4(){
           text-align:center;
         }
       </style>
-        <!-- Button trigger modal -->
+        <!-- ***********BUTTONS*********** -->
         <button type="button" id="addGame" class="btn btn-primary">
           Add Game
         </button> <br><br>
         <button type="button" id="report" class="btn btn-primary">
           View Reports
+        </button>
+        <button type="button" id="update" class="btn btn-primary">
+          Update Game Systems
+        </button>
+        <button type="button" id="delete" class="btn btn-primary">
+          Delete Game
         </button>
        
         
@@ -198,12 +212,52 @@ function generation4(){
           </div>
         </div>
         
+        <!-- Modal Update System-->
+        <div  id="updateSystemModal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Update Game System</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
         
+        <!-- Modal Delete Game-->
+        <div  id="deleteGameModal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Delete Game</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Modal View Reports-->
         <div  id="reportModal" class="modal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Add Game</h5>
+                <h5 class="modal-title">View Reports</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -225,7 +279,21 @@ function generation4(){
                 
                 <div id="accessory_report">
                   <script>
-                     
+                     $.ajax({
+
+                          type: "GET",
+                          url: "php/api.php",
+                          dataType: "json",
+                          success: function(data,status) {
+                          //alert(data);
+                          var price = data[0].avgPrice;
+                          $("#accessory_report").html("Average Price of Accessories: " + price)
+                          },
+                          complete: function(data,status) { //optional, used for debugging purposes
+                          //alert(status);
+                          }
+                          
+                      });//ajax
                   </script>
                 </div>
                 
