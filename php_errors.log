@@ -230,3 +230,18 @@ Stack trace:
 #1 /home/ubuntu/workspace/final/user.php(126): display()
 #2 {main}
   thrown in /home/ubuntu/workspace/final/user.php on line 75
+[07-Dec-2017 03:23:39 UTC] PHP Fatal error:  Call to undefined function getAllGames() in /home/ubuntu/workspace/final/admin.php on line 271
+[07-Dec-2017 03:23:40 UTC] PHP Stack trace:
+[07-Dec-2017 03:23:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/admin.php:0
+[07-Dec-2017 03:24:25 UTC] PHP Fatal error:  Call to undefined function getAllGames() in /home/ubuntu/workspace/final/admin.php on line 271
+[07-Dec-2017 03:24:25 UTC] PHP Stack trace:
+[07-Dec-2017 03:24:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/admin.php:0
+[07-Dec-2017 03:24:51 UTC] PHP Fatal error:  Call to undefined function getAllGames() in /home/ubuntu/workspace/final/admin.php on line 271
+[07-Dec-2017 03:24:51 UTC] PHP Stack trace:
+[07-Dec-2017 03:24:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/admin.php:0
+[07-Dec-2017 03:25:26 UTC] PHP Fatal error:  Call to undefined function getGames() in /home/ubuntu/workspace/final/admin.php on line 272
+[07-Dec-2017 03:25:26 UTC] PHP Stack trace:
+[07-Dec-2017 03:25:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/admin.php:0
+[07-Dec-2017 03:26:01 UTC] PHP Fatal error:  Call to undefined function getGames() in /home/ubuntu/workspace/final/admin.php on line 272
+[07-Dec-2017 03:26:01 UTC] PHP Stack trace:
+[07-Dec-2017 03:26:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/final/admin.php:0

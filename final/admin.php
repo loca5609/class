@@ -52,7 +52,7 @@ function nesReport(){
 
 function genReport(){
   global $conn;
-  $sql = "SELECT count(system) as genCount FROM `game` WHERE system LIKE '%Genesis%'";
+  $sql = "SELECT count(system) as genCount FROM `game` WHERE system LIKE '%Mega Drive%'";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -106,9 +106,21 @@ function generation4(){
   foreach($records as $record){
     echo "4th Generation Consoles: ". $record[gen] ."<br> ";
   }
-   
+  
+
 }
- 
+ function getGames(){
+     global $conn;
+    $sql = "SELECT name, id from game";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach($records as $record){
+      echo "Name: ".$record['name'] ." ";
+      echo "<a href='#' class='deleteLink' id='".$record['id']."'>Delete</a><br>";
+    }
+  }
 
             
             
@@ -117,6 +129,12 @@ function generation4(){
 <script>
     $(document).ready(function() {
       
+        $(".deleteLink").click(function(){
+          var id = $(this).attr('id');
+          deleteCall(id);
+          alert("Deleted");
+          location.reload();
+        });//click
         
         $("#addGame").click(function(){
             $('#addGameModel').modal("show");
@@ -144,8 +162,40 @@ function generation4(){
         
     });//doc ready
     
-   function apiCall(){
-         
+   function accCall(){
+         $.ajax({
+
+                          type: "GET",
+                          url: "php/api.php",
+                          dataType: "json",
+                          success: function(data,status) {
+                          //alert(data);
+                          var price = data[0].avgPrice;
+                          $("#accessory_report").html("Average Price of Accessories: " + price)
+                          },
+                          complete: function(data,status) { //optional, used for debugging purposes
+                          //alert(status);
+                          }
+                          
+                      });//ajax
+    }
+    
+    function deleteCall(id){
+     
+      $.ajax({
+
+                          type: "GET",
+                          url: "php/delete.php",
+                          dataType: "json",
+                          data: { "id": id},
+                          success: function(data,status) {
+                          
+                          },
+                          complete: function(data,status) { //optional, used for debugging purposes
+                          //alert(status);
+                          }
+                          
+                      });//ajax
     }
     
 </script>
@@ -223,7 +273,7 @@ function generation4(){
                 </button>
               </div>
               <div class="modal-body">
-                
+                Update Game System Here!
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -243,7 +293,7 @@ function generation4(){
                 </button>
               </div>
               <div class="modal-body">
-                
+                <?=getGames()?>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -279,21 +329,7 @@ function generation4(){
                 
                 <div id="accessory_report">
                   <script>
-                     $.ajax({
-
-                          type: "GET",
-                          url: "php/api.php",
-                          dataType: "json",
-                          success: function(data,status) {
-                          //alert(data);
-                          var price = data[0].avgPrice;
-                          $("#accessory_report").html("Average Price of Accessories: " + price)
-                          },
-                          complete: function(data,status) { //optional, used for debugging purposes
-                          //alert(status);
-                          }
-                          
-                      });//ajax
+                     accCall();
                   </script>
                 </div>
                 

@@ -2,7 +2,7 @@
 include "../../dbConn.php";
 
 
-$sql = "SELECT id, avg(price) as avgPrice FROM accessories";
+$sql = "SELECT name, id, avg(price) as avgPrice FROM accessories";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $records = $stmt->fetchAll(PDO::FETCH_ASSOC);

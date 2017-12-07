@@ -16,6 +16,7 @@
           <h1 class="display-3">RETRO GAME CATALOG</h1><br>
           <p class="lead">THE BEST OF THE PIXEL ERA</p>
           <hr class="my-4">
+          <a href="index.php" class="btn btn-primary">Home</a>
           
         </div>
         
