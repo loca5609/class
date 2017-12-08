@@ -15,8 +15,9 @@ function getGameSystems(){
 }
 function displayAcc(){
     global $conn;
-    $sql = "select name, type, system, quantity from accessories WHERE system LIKE :systemName";
+    $sql = "select name, type, system, quantity from accessories WHERE system LIKE :systemName AND name LIKE :accName";
     $namedParameters[':systemName'] = "%" . $_GET['systemFilter'] . "%";
+    $namedParameters[':accName'] = "%" . $_GET['game'] . "%";
     $stmt = $conn->prepare($sql);
     $stmt->execute($namedParameters);
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
